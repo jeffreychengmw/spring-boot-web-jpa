@@ -1,5 +1,6 @@
 package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -10,12 +11,14 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hivesplaceteam.sb2StarterWebJpaThymeleaf.exception.ErrorDetails;
 import com.hivesplaceteam.sb2StarterWebJpaThymeleaf.model.User;
 import com.hivesplaceteam.sb2StarterWebJpaThymeleaf.repository.UserRepository;
 
@@ -46,22 +49,32 @@ public class HomeController {
 	}
 	
 	@PostMapping("/createUser")
-	public ResponseEntity<User> createUser(@RequestBody @Valid User user, BindingResult bindingResult) {
+	public ResponseEntity<?> createUser(@RequestBody @Valid User user, BindingResult bindingResult) {
 		System.out.println("id: "+user.getId()+"; username: "+user.getUsername()+"; password: "+user.getPassword()+"; status: "+user.getStatus());
 		if(bindingResult.hasErrors()) {
 			System.out.println("bindingResult has error!");
-			return new ResponseEntity<>(user, HttpStatus.BAD_REQUEST);
+			ErrorDetails errorDetails = new ErrorDetails();
+	        errorDetails.setErrorCode(HttpStatus.BAD_REQUEST.toString());
+	        List<String> errorMessage = new ArrayList<String>();
+	        errorMessage.add(bindingResult.getFieldError().getDefaultMessage());
+	        errorDetails.setErrorMessage(errorMessage);
+			return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
 		}
 		if (userRepository.findById(user.getId()).isPresent()) {
 			System.out.println("User already exist!");
-			return new ResponseEntity<>(HttpStatus.CONFLICT);
+			ErrorDetails errorDetails = new ErrorDetails();
+			errorDetails.setErrorCode(HttpStatus.CONFLICT.toString());
+			List<String> errorMessage = new ArrayList<String>();
+			errorMessage.add("User already exist!");
+	        errorDetails.setErrorMessage(errorMessage);
+			return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.CONFLICT);
 		}
 		/*Custom Http Headers*/
 		/*HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.set("MyResponseHeader1", "MyValue1");
 		responseHeaders.set("MyResponseHeader1", "MyValue1");*/
 		/*return new ResponseEntity<>(userRepository.save(user), responseHeaders, HttpStatus.CREATED);*/
-		System.out.println("bindingResult has error");
-		return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
+		System.out.println("everything ok, user saved");
+		return new ResponseEntity<User>(userRepository.save(user), HttpStatus.CREATED);
 	}
 }

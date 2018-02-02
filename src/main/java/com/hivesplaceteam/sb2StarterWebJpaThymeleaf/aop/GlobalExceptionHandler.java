@@ -1,5 +1,8 @@
 package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.aop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -15,7 +18,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> servletRequestBindingException(ServletRequestBindingException e) {
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setErrorCode(HttpStatus.BAD_REQUEST.toString());
-		errorDetails.setErrorMessage(e.getMessage());
+		List<String> errorMessage = new ArrayList<String>();
+		errorMessage.add(e.getMessage());
+		errorDetails.setErrorMessage(errorMessage);
 		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
 	
@@ -23,7 +28,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> resourceNotFoundException(RuntimeException e) {
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setErrorCode(HttpStatus.NOT_FOUND.toString());
-		errorDetails.setErrorMessage(e.getMessage());
+		List<String> errorMessage = new ArrayList<String>();
+		errorMessage.add(e.getMessage());
+		errorDetails.setErrorMessage(errorMessage);
 		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
 	
@@ -34,7 +41,7 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> exception(Exception e) {
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.toString());
-		errorDetails.setErrorMessage(e.getMessage());
+		//errorDetails.setErrorMessage(e.getMessage());
 		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

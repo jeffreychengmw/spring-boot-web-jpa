@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
@@ -61,9 +61,7 @@ public class User implements Serializable {
 	//@Pattern(regexp="[0-9]+", message="Id must contains only digit")
 	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	@Pattern(regexp="[0-9]+", message="User Name must contains one digit - {invalid.username}")
-	@Pattern(regexp="[a-zA-Z]+", message="User Name must contains one character - {invalid.username}")
-	@Pattern(regexp="(?=\\S+$).+",message="User Name must not contains whitespace - {invalid.username}")
+	@Email
 	@Column(name="username", unique=true)
 	private String username;
 	@NotNull(message="password cannot be null")
