@@ -61,11 +61,20 @@ public class HomeController {
 			return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
 		}
 		if (userRepository.findById(user.getId()).isPresent()) {
-			System.out.println("User already exist!");
+			System.out.println("User Id already exist!");
 			ErrorDetails errorDetails = new ErrorDetails();
 			errorDetails.setErrorCode(HttpStatus.CONFLICT.toString());
 			List<String> errorMessage = new ArrayList<String>();
-			errorMessage.add("User already exist!");
+			errorMessage.add("User Id already exist!");
+	        errorDetails.setErrorMessage(errorMessage);
+			return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.CONFLICT);
+		}
+		if (userRepository.findByUserName(user.getUsername()).isPresent()) {
+			System.out.println("Username already exist!");
+			ErrorDetails errorDetails = new ErrorDetails();
+			errorDetails.setErrorCode(HttpStatus.CONFLICT.toString());
+			List<String> errorMessage = new ArrayList<String>();
+			errorMessage.add("Username already exist!");
 	        errorDetails.setErrorMessage(errorMessage);
 			return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.CONFLICT);
 		}
