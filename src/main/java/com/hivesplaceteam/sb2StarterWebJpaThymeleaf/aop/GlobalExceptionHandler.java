@@ -41,7 +41,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> exception(Exception e) {
 		ErrorDetails errorDetails = new ErrorDetails();
 		errorDetails.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.toString());
-		//errorDetails.setErrorMessage(e.getMessage());
+		List<String> errorMessage = new ArrayList<String>();
+		errorMessage.add(e.getMessage());
+		errorDetails.setErrorMessage(errorMessage);
 		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
