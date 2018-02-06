@@ -1,4 +1,4 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.config;
+package com.hivesplaceteam.sbWebJpaRest.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;

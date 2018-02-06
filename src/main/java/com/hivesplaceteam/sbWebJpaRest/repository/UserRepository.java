@@ -1,11 +1,11 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.repository;
+package com.hivesplaceteam.sbWebJpaRest.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.hivesplaceteam.sb2StarterWebJpaThymeleaf.model.User;
+import com.hivesplaceteam.sbWebJpaRest.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 

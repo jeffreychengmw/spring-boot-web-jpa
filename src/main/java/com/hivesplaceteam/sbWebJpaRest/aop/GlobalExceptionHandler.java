@@ -1,4 +1,4 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.aop;
+package com.hivesplaceteam.sbWebJpaRest.aop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.hivesplaceteam.sb2StarterWebJpaThymeleaf.exception.ErrorDetails;
+import com.hivesplaceteam.sbWebJpaRest.exception.ErrorDetails;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

@@ -1,4 +1,4 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.exception;
+package com.hivesplaceteam.sbWebJpaRest.exception;
 
 import java.util.ArrayList;
 import java.util.List;

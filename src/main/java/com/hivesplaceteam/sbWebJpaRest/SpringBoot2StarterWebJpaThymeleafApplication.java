@@ -1,4 +1,4 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf;
+package com.hivesplaceteam.sbWebJpaRest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

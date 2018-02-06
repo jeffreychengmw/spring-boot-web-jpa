@@ -1,4 +1,4 @@
-package com.hivesplaceteam.sb2StarterWebJpaThymeleaf.model;
+package com.hivesplaceteam.sbWebJpaRest.model;
 
 import java.io.Serializable;
 
