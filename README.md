@@ -1,6 +1,7 @@
 # **spring-boot-web-jpa-rest**
 ###### DEMO Restful Spring Boot Application employs MVC and JPA
 
+### :fa-gear fa-spin: Application Configuration
 | Development Environment | Version |
 | :------------- | :------------- |
 | Java | 8 |
