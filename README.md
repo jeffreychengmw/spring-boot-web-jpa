@@ -22,7 +22,7 @@ This demo will demonstrate various jpa functions, such as findAll(), findById(),
 + Base URI: /
 + Key Authors: Jeffrey M W Cheng
 + Author's Email: 2653399478@qq.com
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="developmentEnvironment"></a>
 ### Development Environment
@@ -30,18 +30,18 @@ This demo will demonstrate various jpa functions, such as findAll(), findById(),
 + Language Framework: Spring Boot 2.0.0.M7
 + IDE: STS 3.9.2
 + Extended Modules: Spring Web (MVC), JPA, MySQL-connector, REST API
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="jiraEpics"></a>
 ### JIRA Epics
 + [MYITLearning - Spring Boot 2 Tutorials](http://www.hivesplace.com:8081/browse/MYIT-1)
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="version"></a>
 ### Version
 **0.0.1**
 + Initial Development based on **Beginning Spring Boot 2: Applications and Microservices with the Spring Framework** *K. Siva Prasad Reddy* **APRESS @ 2017** *ISBN-13 (pbk): 978-1-4842-2930-9*
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="applicationDetails"></a>
 ### &#x1F53B; Application Details
@@ -53,7 +53,7 @@ API Methods
 | Get | /id/{id} | retrieve a single user by id |
 | Get | /username/{username:.+} | retrieve a single user by username accepting dot(.) in the url path |
 | Post | /createUser | create a user |
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="applicationSpecificMapping"></a>
 ### &#x1F53B; Application Specific Mapping
@@ -69,7 +69,7 @@ API Methods
 | /createUser | 200 | 201 | 201 | {"id":23,"username":"hivesplace@gmail.com","password":"89uhu1ntu567","status":1} |
 | /createUser | 400 | 400 | 400 | Error message handled by Global Exception Handler |
 | /createUser | 409 | 409 | 409 | Error message handled by Global Exception Handler |
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="globalExceptionHandler"></a>
 ### &#x1F53B; Global Exception Handler
@@ -81,7 +81,7 @@ API Methods
 | /username/{username:.+} | 404 | Resources Not Found | RuntimeException message |
 | /createUser | 409 | Request Conflict with Existing Resources | RuntimeException message |
 | [ALL API PATH] | 500 | Internal Server Error | Exception message |
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
 
 <a name="programInstallationAndExecution"></a>
 ### &#x1F53B; Program Installation and Execution
@@ -91,4 +91,4 @@ API Methods
     + mvn clean package
     + fire command "java -jar [jar file name]" to execute the application
 + open browser/postman @ http://localhost:8080 to test all API Methods
-[&#x1f51d;](top)
+[&#x1f51d;](#top)
