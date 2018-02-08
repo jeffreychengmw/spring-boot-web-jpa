@@ -42,8 +42,8 @@ This demo will demonstrate various jpa functions, such as findAll(), findById(),
 
 <a name="version"></a>
 ### Version
-**0.0.1**
-+ Initial Development based on **Beginning Spring Boot 2: Applications and Microservices with the Spring Framework** *K. Siva Prasad Reddy* **APRESS @ 2017** *ISBN-13 (pbk): 978-1-4842-2930-9*
+**0.1.0**
++ Initial Development
 
 [&#x1f51d;](#top)
 
@@ -98,5 +98,11 @@ API Methods
     + mvn clean package
     + fire command "java -jar [jar file name]" to execute the application
 + open browser/postman @ http://localhost:8080 to test all API Methods
+
+[&#x1f51d;](#top)
+
+
+### &#x1F53B; Acknowledgements
++ **Beginning Spring Boot 2: Applications and Microservices with the Spring Framework** *K. Siva Prasad Reddy* **APRESS @ 2017** *ISBN-13 (pbk): 978-1-4842-2930-9*
 
 [&#x1f51d;](#top)
