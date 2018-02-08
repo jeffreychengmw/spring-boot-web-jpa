@@ -93,7 +93,7 @@ API Methods
 <a name="programInstallationAndExecution"></a>
 ### &#x1F53B; Program Installation and Execution
 + setup a local MySQL server with database name "spring_boot_2_tutorial"
-+ uncomment "Initialize database by executing /resources/data.sql" and "spring.datasource.initialization-mode=always" in application.properties in src/main/resources folder
++ uncomment "spring.datasource.initialization-mode=always" in application.properties in src/main/resources folder
 + Standard Spring Boot application installation and execution process
     + mvn clean package
     + fire command "java -jar [jar file name]" to execute the application
