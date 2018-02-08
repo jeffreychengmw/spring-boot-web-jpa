@@ -1,18 +1,10 @@
+<a name="top"></a>
 # **spring-boot-web-jpa-rest**
 ###### DEMO Restful Spring Boot Application employs MVC and JPA
 
-### :fa-gear fa-spin: Application Configuration
-| Development Environment | Version |
-| :------------- | :------------- |
-| Java | 8 |
-| Spring Boot | 2.0.0.M7 |
-| STS | 3.9.2 |
-| JPA | Spring Boot Managed Version |
-| Web | Spring Boot Managed Version |
-| MySQL connector | Spring Boot Managed Version |
-
 ### &#x1f4d8; Table of Contents
 + [Summary](#summary)
++ [Development Environment](#developmentEnvironment)
 + [JIRA Epics](#jiraEpics)
 + [Version](#version)
 + [Application Details](#applicationDetails)
@@ -21,7 +13,7 @@
 + [Program Installation And Execution](#programInstallationAndExecution)
 
 <a name="summary"></a>
-### Summary
+### &#x1F53B; Summary
 Demo Restful Spring Boot Application employs Spring Boot starter auto-configuration with web, jpa, thymeleaf and mysql-connector.
 
 This demo will demonstrate various jpa functions, such as findAll(), findById(), findBy[Bean Variable Name](), save() etc.
@@ -30,18 +22,29 @@ This demo will demonstrate various jpa functions, such as findAll(), findById(),
 + Base URI: /
 + Key Authors: Jeffrey M W Cheng
 + Author's Email: 2653399478@qq.com
+[&#x1f51d;](top)
+
+<a name="developmentEnvironment"></a>
+### Development Environment
++ Language: Java 8
++ Language Framework: Spring Boot 2.0.0.M7
++ IDE: STS 3.9.2
++ Extended Modules: Spring Web (MVC), JPA, MySQL-connector, REST API
+[&#x1f51d;](top)
 
 <a name="jiraEpics"></a>
 ### JIRA Epics
 + [MYITLearning - Spring Boot 2 Tutorials](http://www.hivesplace.com:8081/browse/MYIT-1)
+[&#x1f51d;](top)
 
 <a name="version"></a>
 ### Version
 **0.0.1**
 + Initial Development based on **Beginning Spring Boot 2: Applications and Microservices with the Spring Framework** *K. Siva Prasad Reddy* **APRESS @ 2017** *ISBN-13 (pbk): 978-1-4842-2930-9*
+[&#x1f51d;](top)
 
 <a name="applicationDetails"></a>
-### Application Details
+### &#x1F53B; Application Details
 API Methods
 
 | Method Type | Path | Description  |
@@ -50,9 +53,10 @@ API Methods
 | Get | /id/{id} | retrieve a single user by id |
 | Get | /username/{username:.+} | retrieve a single user by username accepting dot(.) in the url path |
 | Post | /createUser | create a user |
+[&#x1f51d;](top)
 
 <a name="applicationSpecificMapping"></a>
-### Application Specific Mapping
+### &#x1F53B; Application Specific Mapping
 
 | API Path | HTTP Status Code | Backend HTTP Response Code | Backend Response Code | Backend Response Message |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
@@ -65,9 +69,10 @@ API Methods
 | /createUser | 200 | 201 | 201 | {"id":23,"username":"hivesplace@gmail.com","password":"89uhu1ntu567","status":1} |
 | /createUser | 400 | 400 | 400 | Error message handled by Global Exception Handler |
 | /createUser | 409 | 409 | 409 | Error message handled by Global Exception Handler |
+[&#x1f51d;](top)
 
 <a name="globalExceptionHandler"></a>
-### Global Exception Handler
+### &#x1F53B; Global Exception Handler
 
 | API Path | Backend Response Error Code | Error Description | Backend Response Error Message |
 | :------------- | :------------- | :------------- |
@@ -76,12 +81,14 @@ API Methods
 | /username/{username:.+} | 404 | Resources Not Found | RuntimeException message |
 | /createUser | 409 | Request Conflict with Existing Resources | RuntimeException message |
 | [ALL API PATH] | 500 | Internal Server Error | Exception message |
+[&#x1f51d;](top)
 
 <a name="programInstallationAndExecution"></a>
-### Program Installation and Execution
+### &#x1F53B; Program Installation and Execution
 + setup a local MySQL server with database name "spring_boot_2_tutorial"
 + uncomment "Initialize database by executing /resources/data.sql" and "spring.datasource.initialization-mode=always" in application.properties in src/main/resources folder
 + Standard Spring Boot application installation and execution process
     + mvn clean package
     + fire command "java -jar [jar file name]" to execute the application
 + open browser/postman @ http://localhost:8080 to test all API Methods
+[&#x1f51d;](top)
