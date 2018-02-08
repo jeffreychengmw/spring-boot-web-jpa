@@ -81,7 +81,7 @@ API Methods
 ### &#x1F53B; Global Exception Handler
 
 | API Path | Backend Response Error Code | Error Description | Backend Response Error Message |
-| :------------- | :------------- | :------------- |
+| :------------- | :------------- | :------------- | :------------- |
 | / | 400 | Bad Request | ServletRequestBindingException message |
 | /id/{id} | 404 | Resources Not Found | RuntimeException message |
 | /username/{username:.+} | 404 | Resources Not Found | RuntimeException message |
