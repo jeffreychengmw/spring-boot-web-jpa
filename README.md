@@ -32,7 +32,7 @@ This demo will demonstrate various jpa functions, such as findAll(), findById(),
 
 <a name="jiraEpics"></a>
 ### JIRA Epics
-+
++ [MYITLearning - Spring Boot 2 Tutorials](http://www.hivesplace.com:8081/browse/MYIT-1)
 
 <a name="version"></a>
 ### Version
@@ -81,6 +81,6 @@ API Methods
 + setup a local MySQL server with database name "spring_boot_2_tutorial"
 + uncomment "Initialize database by executing /resources/data.sql" and "spring.datasource.initialization-mode=always" in application.properties in src/main/resources folder
 + Standard Spring Boot application installation and execution process
-+ mvn clean package
-+ fire command "java -jar [jar file name]" to execute the application
-+ open browser @ http://localhost:8080
+    + mvn clean package
+    + fire command "java -jar [jar file name]" to execute the application
++ open browser/postman @ http://localhost:8080 to test all API Methods
