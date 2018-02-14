@@ -1,9 +1,22 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+            	timeout(time: 30, unit: 'SECONDS') {
+	                sh 'echo "Hello Jenkins"'
+	                sh '''
+	                	echo "Multi-line shell steps works too"
+	                	ls -lah
+	                '''
+	            }
+            }
+        }
+        stage('deploy') {
+            steps {
+            	timeout(time: 30, unit: 'SECONDS') {
+	                sh 'echo "Hello Jenkins @deploy"'
+	            }
             }
         }
     }
