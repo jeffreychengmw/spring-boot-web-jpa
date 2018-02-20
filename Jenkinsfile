@@ -7,7 +7,7 @@ pipeline {
         stage('build') {
             steps {
             	timeout(time: 30, unit: 'SECONDS') {
-	                sh 'mvn -B -DskipTests clean package'
+	                sh 'echo "Hello Jenkins @build"'           
 	            }
             }
         }
