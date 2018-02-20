@@ -3,11 +3,16 @@ pipeline {
     parameters {
     	string(name: 'myInput', description: 'Some pipeline parameters')
     }
+    environment {
+    	DISABLE_AUTH = 'true'
+    	DB_ENGINE = 'sqlite'
+    }
     stages {
         stage('build') {
             steps {
             	timeout(time: 30, unit: 'SECONDS') {
-	                sh 'echo "Hello Jenkins @build"'           
+	                sh 'echo "Hello Jenkins @build"'
+	                sh 'printenv'           
 	            }
             }
         }
