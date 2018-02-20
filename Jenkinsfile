@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+    	string(name: 'myInput', description: 'Some pipeline parameters')
+    }
     stages {
         stage('build') {
             steps {
