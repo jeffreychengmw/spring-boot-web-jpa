@@ -6,6 +6,7 @@ pipeline {
     environment {
     	DISABLE_AUTH = 'true'
     	DB_ENGINE = 'sqlite'
+    	myInput = 'undefined'
     }
     stages {
         stage('build') {
