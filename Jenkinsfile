@@ -1,12 +1,11 @@
 pipeline {
     agent any
     parameters {
-    	string(name: 'myInput', description: 'Some pipeline parameters')
+    	string(name: 'myInput', value:'undefined', description: 'Some pipeline parameters')
     }
     environment {
     	DISABLE_AUTH = 'true'
     	DB_ENGINE = 'sqlite'
-    	myInput = 'undefined'
     }
     stages {
         stage('build') {
