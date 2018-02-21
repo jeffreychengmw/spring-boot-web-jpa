@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters {
-    	string(name: 'myInput', value:'undefined', description: 'Some pipeline parameters')
-    }
     environment {
     	DISABLE_AUTH = 'true'
     	DB_ENGINE = 'sqlite'
